@@ -38,11 +38,6 @@ class Personal
     private $dateStart;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $salary;
-
-    /**
      * @ORM\Column(type="datetime")
      */
     private $createdDate;
@@ -51,6 +46,16 @@ class Personal
      * @ORM\Column(type="datetime")
      */
     private $modifiedDate;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=JobTitle::class, inversedBy="personals")
+     */
+    private $jobTitle;
+
+    public function __toString()
+    {
+        return $this->username;
+    }
 
     public function getId(): ?int
     {
@@ -105,18 +110,6 @@ class Personal
         return $this;
     }
 
-    public function getsalary(): ?int
-    {
-        return $this->salary;
-    }
-
-    public function setsalary(int $salary): self
-    {
-        $this->salary = $salary;
-
-        return $this;
-    }
-
     public function getCreatedDate(): ?\DateTimeInterface
     {
         return $this->createdDate;
@@ -137,6 +130,18 @@ class Personal
     public function setModifiedDate(\DateTimeInterface $modifiedDate): self
     {
         $this->modifiedDate = $modifiedDate;
+
+        return $this;
+    }
+
+    public function getJobTitle(): ?JobTitle
+    {
+        return $this->jobTitle;
+    }
+
+    public function setJobTitle(?JobTitle $jobTitle): self
+    {
+        $this->jobTitle = $jobTitle;
 
         return $this;
     }
