@@ -22,11 +22,11 @@ class PersonalCrudController extends AbstractCrudController
     {
         return [
             IdField::new('Id', 'ID')->onlyOnIndex(),
-            TextField::new('username', 'Login'),
-            TextField::new('fullName', 'Full name'),
-            AssociationField::new('jobTitle', 'Job Title'),
+            TextField::new('username', 'Логин'),
+            TextField::new('fullName', 'ФИО'),
+            AssociationField::new('jobTitle', 'Должность'),
 //            IntegerField::new('salary', 'Salary'),
-            DateField::new('dateStart', 'Date Start'),
+            DateField::new('dateStart', 'Принят на работу'),
         ];
     }
 }
