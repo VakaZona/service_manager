@@ -105,14 +105,14 @@ class Personal
         return $this;
     }
 
-    public function getыфдsalary(): ?int
+    public function getsalary(): ?int
     {
-        return $this->ыфдsalary;
+        return $this->salary;
     }
 
-    public function setыфдsalary(int $ыфдsalary): self
+    public function setsalary(int $salary): self
     {
-        $this->ыфдsalary = $ыфдsalary;
+        $this->salary = $salary;
 
         return $this;
     }
