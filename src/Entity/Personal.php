@@ -40,7 +40,7 @@ class Personal
     /**
      * @ORM\Column(type="integer")
      */
-    private $ыфдsalary;
+    private $salary;
 
     /**
      * @ORM\Column(type="datetime")
